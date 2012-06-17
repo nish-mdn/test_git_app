@@ -3,3 +3,4 @@ second line from master with first commit.
 Third line from master and commit no is 2
 fourth line from master and commit no is 3.
 fixth line to master and commit no is 4.
+6th line to master and commit no is 5.
