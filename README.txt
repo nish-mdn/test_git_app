@@ -5,3 +5,4 @@ fourth line from master and commit no is 3.
 fixth line to master and commit no is 4.
 6th line to master and commit no is 5.
 1st line from first branch called fb.
+7th line in master
