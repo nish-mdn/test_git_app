@@ -11,6 +11,9 @@ new fb commit hehe
 3rd line from fb.
 again come to fb start 
 new fb commit hehe1
+aaha from fb
 again come back to fb end
 fb commit hehe2
 sunday night hehe to master
+i will come to know what a diff between git fetch and git pull
+
