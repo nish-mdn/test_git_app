@@ -1,4 +1,5 @@
 This is first line in readme file first commit from master branch
+inserted with o command using vi editor
 second line from master with first commit.
 Third line from master and commit no is 2
 fourth line from master and commit no is 3.
