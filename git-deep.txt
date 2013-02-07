@@ -1,0 +1,1 @@
+This file was added because of we need to make sure after clone the repository using --depth option whether we can able to commit/push into remote repository or not lets go for push now =) Happy Coding :)
