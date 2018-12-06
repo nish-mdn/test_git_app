@@ -1,7 +1,9 @@
 language: ruby
 rvm:
   - 2.3.1
-
+before_script:
+  - cd blog
 script: 
+  - bundle install
   - bundle exec rspec
 
