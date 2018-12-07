@@ -106,15 +106,6 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation, :except => %w[base_system_parameters base_currencies base_countries base_state_provinces base_naics_codes base_ineligibility_reasons base_charge_codes base_sales_regions base_interest_rate_codes base_invoice_statuses base_cash_receipt_source_codes factoring_verification_parameters ] )
-    Rails.application.load_seed # loading seeds
-  end
-
-  config.before(:each) do
-    Borrower.delete_all
-  end
 
   #config.include Devise::TestHelpers, :type => :controller
   #config.extend ControllerMacros, :type => :controller
@@ -129,17 +120,7 @@ RSpec.configure do |config|
   #       # Equivalent to being in spec/controllers
   #     end
   config.infer_spec_type_from_file_location!
-  config.before(:each) do
-    stub_request(:get, /www.comerica.com/).
-        with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-        to_return(status: 200, body: "stubbed response", headers: {})
 
-    #mock the security_links validation for lender fabricator
-    security_link =  Rails.application.config.security_link
-    stub_request(:head, security_link).
-         with(headers: {'Accept'=>'*/*', 'Host'=> security_link.gsub("http://",""), 'User-Agent'=>'Ruby'}).
-         to_return(status: 200, body: "", headers: {})
-  end
 
   def set_request_header(token, type)
     request.env['CONTENT_TYPE'] = type

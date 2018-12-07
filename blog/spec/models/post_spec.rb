@@ -1,6 +1,16 @@
 require 'rails_helper'
+require 'rspec/expectations'
 
 describe "Post class should be there" do
+  it do
   post = Post.new
-  post.should be_true
+  expect(post.nil?).to be_falsey
+  end
+end
+
+describe "Comment class should be there" do
+  it do 
+  comment = Comment.new
+  expect(comment.nil?).to be_falsey
+  end
 end
