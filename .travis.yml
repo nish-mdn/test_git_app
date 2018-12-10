@@ -2,11 +2,14 @@ language: ruby
 rvm:
   - 2.3.1
 before_install:
-  - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/super_secret.txt.enc -out super_secret.txt -d
-  - cat super_secret.txt
+  - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/mdn-mysql-own.pem.enc -out mdn-mysql-own.pem -d
+  - cat mdn-mysql-own.pem
 before_script:
   - cd blog
 script: 
   - bundle install
   - bundle exec rspec
+deploy:
+  - sudo scp -i mdn-chef-workstation.pem \
+    ~/blog/* ubuntu@18.208.196.148:~/.
 
