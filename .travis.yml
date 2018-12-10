@@ -16,7 +16,5 @@ deploy:
   - provider: script
     script: bash scripts/deploy.sh
     on:
-      branches:    # ← new!
-        only:      # ← new!
-        - dev_master # ← new!  
+      all_branches: true
 
