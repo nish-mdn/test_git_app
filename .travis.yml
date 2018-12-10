@@ -12,6 +12,10 @@ before_script:
 script: 
   - bundle install
   - bundle exec rspec
+addons:
+  ssh_known_hosts: 18.208.196.148  
+before_deploy:
+
 deploy:
   - provider: script
     script: bash scripts/deploy.sh
