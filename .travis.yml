@@ -10,6 +10,6 @@ script:
   - bundle install
   - bundle exec rspec
 deploy:
-  - sudo scp -i mdn-chef-workstation.pem \
-    ~/blog/* ubuntu@18.208.196.148:~/.
+  - provider: script
+    script: bash scripts/deploy.sh
 
