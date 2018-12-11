@@ -6,7 +6,10 @@ branches:
   - dev_master  
 before_install:
   - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/mdn-mysql-own.pem.enc -out mdn-mysql-own.pem -d
+  - chmod 600 mdn-mysql-own.pem
   - cat mdn-mysql-own.pem
+  - eval "$(ssh-agent -s)"
+  - ssh-add mdn-mysql-own.pem
 install:
   - echo 'amazonaws.com,18.207.183.128 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG4W/WtjgGSPQdLthvsT9Vu2UZtEv9SRusr87+dxx8zENXfuAmiSYFf9Y3p7mMGKylTF5RscoWv3hNKq29sJhBCam81MJfuW30SBtRwVgvNiJ7WCAPyFJnIbqxJyTuM3bjX5BvoQGPuL2VjBc+opBHZtxV5EbrNJpmmd6C1afaX8wMMhpwgHoCO1mexofq+1OkDACwrSXVEJP/MaIhMUWqt8F45eJXZTf8JfdlAQsC8qofpcc9Iqy45qrkswTrBL6WGWllhITIX8kewl8bxYw4UGsYab0nIN8pEA2y04/CKeDFumIPtCgyOt0p0/XH1PYrkVXeHCW1ISXn3YmqFN2X==' >> ${TRAVIS_HOME}/.ssh/known_hosts
   - cat ${TRAVIS_HOME}/.ssh/known_hosts 
