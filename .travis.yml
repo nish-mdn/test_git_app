@@ -21,7 +21,7 @@ script:
 addons:
   ssh_known_hosts: 
   - 172.31.15.186
-  - 18.207.183.128  
+  - 18.207.183.128
 deploy:
   - provider: script
     script: bash scripts/deploy.sh
