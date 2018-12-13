@@ -11,7 +11,7 @@ before_install:
   - eval "$(ssh-agent -s)"
   - ssh-add blog/mdn-mysql-own.pem
 install:
-  - echo 'amazonaws.com,18.204.243.94 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG4W/WtjgGSPQdLthvsT9Vu2UZtEv9SRusr87+dxx8zENXfuAmiSYFf9Y3p7mMGKylTF5RscoWv3hNKq29sJhBCam81MJfuW30SBtRwVgvNiJ7WCAPyFJnIbqxJyTuM3bjX5BvoQGPuL2VjBc+opBHZtxV5EbrNJpmmd6C1afaX8wMMhpwgHoCO1mexofq+1OkDACwrSXVEJP/MaIhMUWqt8F45eJXZTf8JfdlAQsC8qofpcc9Iqy45qrkswTrBL6WGWllhITIX8kewl8bxYw4UGsYab0nIN8pEA2y04/CKeDFumIPtCgyOt0p0/XH1PYrkVXeHCW1ISXn3YmqFN2X==' >> ${TRAVIS_HOME}/.ssh/known_hosts
+  - echo 'amazonaws.com,18.232.146.23 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG4W/WtjgGSPQdLthvsT9Vu2UZtEv9SRusr87+dxx8zENXfuAmiSYFf9Y3p7mMGKylTF5RscoWv3hNKq29sJhBCam81MJfuW30SBtRwVgvNiJ7WCAPyFJnIbqxJyTuM3bjX5BvoQGPuL2VjBc+opBHZtxV5EbrNJpmmd6C1afaX8wMMhpwgHoCO1mexofq+1OkDACwrSXVEJP/MaIhMUWqt8F45eJXZTf8JfdlAQsC8qofpcc9Iqy45qrkswTrBL6WGWllhITIX8kewl8bxYw4UGsYab0nIN8pEA2y04/CKeDFumIPtCgyOt0p0/XH1PYrkVXeHCW1ISXn3YmqFN2X==' >> ${TRAVIS_HOME}/.ssh/known_hosts
   - cat ${TRAVIS_HOME}/.ssh/known_hosts 
 before_script:
   - cd blog
@@ -21,7 +21,7 @@ script:
 addons:
   ssh_known_hosts: 
   - 172.31.15.186
-  - 18.204.243.94
+  - 18.232.146.23
 deploy:
   - provider: script
     script: bash scripts/deploy.sh
