@@ -2,7 +2,7 @@ language: ruby
 stages:
   -name: "unit test"
   -name: "deploy on prod"
-    if: branch = "master"
+    if: branch = master
 jobs:
   include:
     - stage: "unit test"
