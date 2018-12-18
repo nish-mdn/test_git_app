@@ -1,6 +1,7 @@
 language: ruby
 stages:
   -name: "unit test"
+    if: branch = dev_master
   -name: "deploy on prod"
     if: branch = master
 jobs:
