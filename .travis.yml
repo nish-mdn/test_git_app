@@ -1,4 +1,6 @@
 language: ruby
+# the following line is needed to enable the TravisCI build conditions
+conditions: v1
 stages:
   -name: unit test
     if: branch = dev_master
