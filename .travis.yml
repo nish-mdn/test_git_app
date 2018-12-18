@@ -9,14 +9,14 @@ stages:
 jobs:
   include:
     - stage: unit test
-      if: $TRAVIS_BRANCH = dev_master
+      if: branch = dev_master
       before_script: 
         - cd blog
       script:
         - bundle install
         - bundle exec rspec
     - stage: deploy on prod
-      if: $TRAVIS_BRANCH = master
+      if: branch = master
       before_install:
         - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/mdn-mysql-own.pem.enc -out blog/mdn-mysql-own.pem -d
         - chmod 600 blog/mdn-mysql-own.pem
