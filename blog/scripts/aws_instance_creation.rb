@@ -1,9 +1,5 @@
 require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 require 'base64'
-Aws.config.update({
-region: 'us-east-1',
-credentials: Aws::Credentials.new('AKIAIS4NO65DF5KXCAXA', 'ivEn+MKOcqVLjRMd4MWm/lhYS20DyharT3Y2ZKyc')
-})
 # User code that's executed when the instance starts
 script = ''
 
