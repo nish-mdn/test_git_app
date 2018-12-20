@@ -9,7 +9,7 @@ stages:
 jobs:
   include:
     - stage: unit test
-      if: branch = dev_master
+      if: branch =~ /^developer*/
       before_script: 
         - cd blog
       script:
