@@ -21,6 +21,8 @@ jobs:
         - bash scripts/loc.sh
         - echo "printing encrypted value"
         - echo $DUMMY_KEY_TEST
+        - echo "normal env printing"
+        - echo $NORMAL
     - stage: deploy on prod
       if: branch = master
       before_install:
