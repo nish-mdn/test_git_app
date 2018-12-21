@@ -9,12 +9,15 @@ stages:
 jobs:
   include:
     - stage: unit test
+      env:
+        - secure: "L+7Gkra6st9Fj6Q3MJYh/wOmSzsYcahq2UyGqgZGgvHpAdclnT9S51VNBXWd4jTQIc0E94LF5HoiTQ7QjDD07uEfJBqYeY95jA3CBi0llGuDztfQPbibc3wHGNSU7F1lDOn0yCJ1TuoZPjkHIOAYMN9OE9mxSsP6mz0l7fgwTLvHX7Ypu12dBHzqGVJQlNepTurKPAgBMbcW2sg0eSpt7Uzcdk9O+wKhlBgQZPyCtMd6o2QEh5EAwG9I6eMvb4UVy0n4uL9dJ4F+0H9gZRxFeP04Qo20XCqiONDtwSUWsNOMQqfBze3VuAoGlGp6kXitvoCsV9suDUEYAlj5DYeT6CCVQkamdvpAkuus+4SbNKxFBlI8HzTL5gPCgst8v2UfufXrql6+/boeWkHR9mMC60lLJTaUcpHVIm4a0/VxDyEZ2xHGiNjz2MLCFNFjJR+YOPsuIu/hxlihUiW68L5aYeqmxztUEn8zqPPWc8n3DQzwIGzZYuKM2MsioZGcT4+dZ/SMR9v8hyypZBHYa/hoepd8RJq3UTVuj42hHo/XXXqcOhvH2ECmZvL/JYN8yk7pjYhSfx8hlGkTUKCC+Qepi9vr04S9JZ/FpCR0aV+JWao0bB1WnlDrVAwfz2dmxsYV3OIy98k+ji6tLCPxW/R5MSVOH3iYpH++T9qqWYbaeT8="
       if: branch =~ /^developer*/
       before_script: 
         - cd blog
       script:
         - bundle install
         - bundle exec rspec
+        - bash scripts/loc.sh
     - stage: deploy on prod
       if: branch = master
       before_install:
