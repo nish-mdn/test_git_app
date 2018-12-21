@@ -22,8 +22,8 @@ jobs:
         - provider: script
           script: bash scripts/loc.sh
           on:
-            branch: 
-              - /^developer*/
+            all_branches: true
+            condition: $TRAVIS_BRANCH =~ /^developer*/
     - stage: deploy on prod
       if: branch = master
       before_install:
