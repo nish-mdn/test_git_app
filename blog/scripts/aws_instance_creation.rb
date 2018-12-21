@@ -1,8 +1,33 @@
-puts "inside ruby program"
-puts ENV['DUMMY_KEY_TEST']
-puts ENV['NORMAL']
+puts "inside ruby programs"
+puts $TRAVIS_BRANCH
 # require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 # require 'base64'
+
+# class AwsInstanceCreation
+
+#   def initialize
+#     Aws.config.update({region: 'us-east-1',credentials: Aws::Credentials.new("#{ENV['AWS_ACCESS_KEY']}", "#{ENV['AWS_SECRET_ACCESS_KEY']}")})
+#     ec2 = Aws::EC2::Resource.new(region: 'us-east-1')
+#   end
+
+#   def get_existing_instances_list
+#     list = []
+#     # Get all instances with tag key 'Group'
+#     # and tag value 'MyGroovyGroup':
+#     ec2.instances({filters: [{name: 'tag:Group', values: ['']}]}).each do |i|
+#       puts 'ID:    ' + i.id
+#       puts 'State: ' + i.state.name
+#     end
+#   end
+
+#   def is_this_instance_available?(given_instance)
+#   end
+
+#   def create_instance
+#   end
+
+
+# end
 # # User code that's executed when the instance starts
 # script = ''
 

@@ -10,19 +10,17 @@ jobs:
   include:
     - stage: unit test
       env:
-        - NORMAL="not an encryped value"
-        - secure: "IRMkFRBEGWDC62tqC3dMywrxHKfYBAKVbdRE13wfNN6Exj5agAcquRf8PcSLDoIl8/pe5Hm353tiKTuqayuuQ1TRjjJRQoZBzB5fL4yTvOnbfhbVmCsTDeYI9DzZRm/uaZGjRbQZ01SipphUdn8OjXXSzypQNiqP2rjwMIo8cdMmUVqkIGJ150aZUDiOvbXjOSdEroWn8i6Q5cVi9oDynJSvuXqUtvg9ICQ0WSTwVKVvBnuy3HGMMA17SqxMlDpULDYGdPcySyHRquoAq6L6O2jkoKS4QHGPgg6tE2krFxuyCMRu5x1+88E2JN8GA+8L2nQVa5jAnJvnZUSlBPHuoa6RdbCL9ZnJsc2BZjvekRHk7Z4ES92JcFBynhrF5hzgM8P8AKp3lGKtUm6ZReaThiB2lB18FoGXTsKCkDMENeOugCqOZSomApe0TrQfuRPID5LrzI99fAkSEvpx/thvvbJ7K1pbTrfGHJibEf4/bqIT1f/gyyjd/wf3EnBB2tpIR7yvV7d+53j4ekN1Aj+jKW/xcy/vXZ11nyhLyIYXYHvufRAx9o4MZj374B1OtrYrffDHrJOsMbD5nm1Om/jsd019sPIpUipBMMY/ngjZXONlpPDCKpTRtZasKo1qyEDGKjAuYTcXulc4JPPSs8QxgHJ3zA0RGqP4zd/k519Xwd0="
+        - secure: "TX020sdv8l+kmzyZFPJm6XlWuoxGIGgqN8KiYknkDS7dlYSTNCMxD3ul35yh/9sOgyr5RV9xvDJwkipV0a+NISuNq59f4jAGoa+Cl9LY6lwWHEoxpptL+p9pT+8BgVjLDumGShOutdLYEB5MHklixcuqrp1XcXUs6SuXFzZpE+FPWxBGtZR7CmOOjkUPZdDOwMw+TCllio6KJ3/QO4WlxnOnOuFajCxYLurPODX6nQkdDYTq87q+U9msOUG9Ygb4hAJFlykCEER3YzoNMf3Uhb1d+kkZNlLPx4OUtRAfP/b7xiEYJZFTx90grrspgGHL2lxtsAh5A6SGTvjM2Fo2r+uw1dJkc9DG70CG7aaAhR4VTyVWH1Y/NdrVwN+M9sx5fBmhW8wZkkOvK0Cjm/nB5AyMK/veFT6BPcUgIFCB7UlY6J1bqBpYY/9M9RlrMLO3/+1Id3vXtE3IZ9BYVsAqpn0MTdx2UiVDRZ8KNmJ7oZHWVjIeXgbJVSuYoQahRfP9sWSBy0sBu+ybwQrIt98nJ+cHxvxXLEUeApdH16yp7Q1AQhYfQXS02NvDN1Aow90WWCbF0w+B5fxQVYh8IUR4XA+vDoRoc7CYgLkvAuB1OCNq//pUW6yx16s18gwv1Y4i+LIouMg7ZtCGRON8AWunL4L7U9zMT5V7QM0j6qgUHEc="
+        - secure: "lezuHkwMQhYP/sB82SW1ealgJpBZ2K21yC7K7bUKe4KPs91DnS+iK+Pzoc2F7XZusCm1jyu+kQkzCZxUXfYY1bK9d1pAOPAjc+28TiIJoHYnJUja6zGHSnG/6JQSmaU5lKNGCKCSDJvdWY18aijOX8InT7k559kZq131yuV6okRv1VXAcy6vsumIoa7zCSKDxnWoFkIdGzbj9VHOfcz+44HGICI5t+eQLJISrXem8b3pV39uMXTnlB/9/cF36qVWZbMQKuNLb+pltfPoaeupLogvGm74jVT93SOUqrpCuB91NZGvhqU72+wush2zPsNz7Kkg1Yz3tuc6sqxB09lowq+13tCi85Ke5BVXfqYvnB/5rIpz+jDVv45lVDm8fPFIFl4hL8hIN1B49iuCcd/WyPyVyvNsHLJBYivbw8g6y45zu4SvKUq0USDOAnxws/5kL3GYqCxlAwCiuYQLzDFpu4iITn5pq0CpOo80wT+B8wDXrd+KazSBYkBHF1c8jL27tfPbV0f1N32wb1iALbBUv/fhWXOY1lj8bKUnkhD605u0iJLN9rhrSLzblS71neInDGCW/EhdHlmXNeAgRHknNl1cRdJgzTVXzsBiompwJQjhTM8hg9rto7kDinU6EsXWL11Exi1nfZkEFsBjmUk5oAlc4AulWRcsn06SK8KUNbo="
       if: branch =~ /^developer*/
       before_script: 
         - cd blog
       script:
         - bundle install
         - bundle exec rspec
-        - bash scripts/loc.sh
-        - echo "printing encrypted value"
-        - echo $DUMMY_KEY_TEST
-        - echo "normal env printing"
-        - echo $NORMAL
+      deploy:
+        - provider: script
+          script: bash scripts/loc.sh  
     - stage: deploy on prod
       if: branch = master
       before_install:
