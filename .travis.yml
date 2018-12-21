@@ -10,6 +10,7 @@ jobs:
   include:
     - stage: unit test
       env:
+        - NORMAL="not an encryped value"
         - secure: "IRMkFRBEGWDC62tqC3dMywrxHKfYBAKVbdRE13wfNN6Exj5agAcquRf8PcSLDoIl8/pe5Hm353tiKTuqayuuQ1TRjjJRQoZBzB5fL4yTvOnbfhbVmCsTDeYI9DzZRm/uaZGjRbQZ01SipphUdn8OjXXSzypQNiqP2rjwMIo8cdMmUVqkIGJ150aZUDiOvbXjOSdEroWn8i6Q5cVi9oDynJSvuXqUtvg9ICQ0WSTwVKVvBnuy3HGMMA17SqxMlDpULDYGdPcySyHRquoAq6L6O2jkoKS4QHGPgg6tE2krFxuyCMRu5x1+88E2JN8GA+8L2nQVa5jAnJvnZUSlBPHuoa6RdbCL9ZnJsc2BZjvekRHk7Z4ES92JcFBynhrF5hzgM8P8AKp3lGKtUm6ZReaThiB2lB18FoGXTsKCkDMENeOugCqOZSomApe0TrQfuRPID5LrzI99fAkSEvpx/thvvbJ7K1pbTrfGHJibEf4/bqIT1f/gyyjd/wf3EnBB2tpIR7yvV7d+53j4ekN1Aj+jKW/xcy/vXZ11nyhLyIYXYHvufRAx9o4MZj374B1OtrYrffDHrJOsMbD5nm1Om/jsd019sPIpUipBMMY/ngjZXONlpPDCKpTRtZasKo1qyEDGKjAuYTcXulc4JPPSs8QxgHJ3zA0RGqP4zd/k519Xwd0="
       if: branch =~ /^developer*/
       before_script: 
