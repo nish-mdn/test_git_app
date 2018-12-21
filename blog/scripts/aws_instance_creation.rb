@@ -1,6 +1,6 @@
 puts "inside ruby program"
-puts $DUMMY_KEY_TEST
-puts $NORMAL
+puts ENV['DUMMY_KEY_TEST']
+puts ENV['NORMAL']
 # require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 # require 'base64'
 # # User code that's executed when the instance starts
