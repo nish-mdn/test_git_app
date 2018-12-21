@@ -7,14 +7,14 @@ class AwsInstanceCreation
 
   def initialize
     Aws.config.update({region: 'us-east-1',credentials: Aws::Credentials.new("#{ENV['AWS_ACCESS_KEY']}", "#{ENV['AWS_SECRET_ACCESS_KEY']}")})
-    ec2 = Aws::EC2::Resource.new(region: 'us-east-1')
+    @ec2 = Aws::EC2::Resource.new(region: 'us-east-1')
   end
 
   def get_existing_instances_list
     list = []
     # Get all instances with tag key 'Group'
     # and tag value 'MyGroovyGroup':
-    ec2.instances({filters: [{name: 'tag:developers-group'}]}).each do |i|
+    @ec2.instances({filters: [{name: 'tag:developers-group'}]}).each do |i|
       puts 'ID:    ' + i.id
       puts 'State: ' + i.state.name
       list << i.state.name
@@ -31,7 +31,7 @@ class AwsInstanceCreation
     script = ''
     encoded_script = Base64.encode64(script)
 
-    instance = ec2.create_instances({
+    instance = @ec2.create_instances({
       image_id: 'ami-0923a19057859a3d0',
       min_count: 1,
       max_count: 1,
@@ -46,7 +46,7 @@ class AwsInstanceCreation
     })
 
     # Wait for the instance to be created, running, and passed status checks
-    ec2.client.wait_until(:instance_status_ok, {instance_ids: [instance.first.id]})
+    @ec2.client.wait_until(:instance_status_ok, {instance_ids: [instance.first.id]})
 
     # Name the instance 'MyGroovyInstance' and give it the Group tag 'MyGroovyGroup'
     instance.first.create_tags({ tags: [{ key: 'developers-group', value: "#{ENV['TRAVIS_BRANCH']}"}]})
