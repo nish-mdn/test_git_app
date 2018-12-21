@@ -14,16 +14,11 @@ class AwsInstanceCreation
     list = []
     # Get all instances with tag key 'Group'
     # and tag value 'MyGroovyGroup':
-    @ec2.instances({filters: [{name: 'tag:developers-group'}]}).each do |i|
-      puts 'ID:    ' + i.id
-      puts 'State: ' + i.state.name
-      list << i.state.name
+    @ec2.instances.each do |i|
+      list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
     end
     puts list.inspect
-    list
-  end
-
-  def is_this_instance_available?(given_instance)
+    list.compact
   end
 
   def create_instance
@@ -60,7 +55,7 @@ end
 
 infra = AwsInstanceCreation.new
 if infra.get_existing_instances_list.include?("#{ENV['TRAVIS_BRANCH']}")
-
+  puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already"
 else
   infra.create_instance
 end  
