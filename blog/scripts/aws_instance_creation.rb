@@ -1,5 +1,5 @@
-puts "inside ruby programs"
-puts $TRAVIS_BRANCH
+puts "inside ruby program"
+puts ENV['TRAVIS_BRANCH']
 # require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 # require 'base64'
 
