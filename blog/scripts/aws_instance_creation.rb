@@ -62,5 +62,6 @@ infra = AwsInstanceCreation.new
 if infra.get_existing_instances_list.include?("#{ENV['TRAVIS_BRANCH']}")
   puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already"
 else
+  puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance
 end  
