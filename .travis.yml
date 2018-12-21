@@ -18,9 +18,10 @@ jobs:
       script:
         - bundle install
         - bundle exec rspec
-      deploy:
-        - provider: script
-          script: bash scripts/loc.sh  
+        - bash scripts/loc.sh 
+      # deploy:
+      #   - provider: script
+      #     script: bash scripts/loc.sh  
     - stage: deploy on prod
       if: branch = master
       before_install:
