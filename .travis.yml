@@ -18,12 +18,14 @@ jobs:
       script:
         - bundle install
         - bundle exec rspec
+        - echo "printingg"
+        - echo ${TRAVIS_BRANCH}
       deploy:
         - provider: script
           script: bash scripts/loc.sh
           on:
             all_branches: true
-            condition: ${TRAVIS_BRANCH} =~ /developer-2/
+            condition: ${TRAVIS_BRANCH} =~ /^developer*/
     - stage: deploy on prod
       if: branch = master
       before_install:
