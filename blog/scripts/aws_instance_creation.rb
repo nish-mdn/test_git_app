@@ -18,15 +18,11 @@ class AwsInstanceCreation
       #list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
       tags = instance.tags
       tags.each do |tag|
-        puts "tag key #{tag.key}"
         if tag.key == "developers-group"
-          puts "going to print developer tag value"
-          puts tag.value
           list << tag.value
         end  
       end
     end
-    puts list.inspect
     list.compact
   end
 
