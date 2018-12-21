@@ -14,8 +14,17 @@ class AwsInstanceCreation
     list = []
     # Get all instances with tag key 'Group'
     # and tag value 'MyGroovyGroup':
-    @ec2.instances.each do |i|
-      list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
+    @ec2.instances.each do |instance|
+      #list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
+      tags = instance.tags
+      tags.each do |tag|
+        puts "tag key #{tag.key}"
+        if tag.key == "developers-group"
+          puts "going to print developer tag value"
+          puts tag.value
+          list << tag.value
+        end  
+      end
     end
     puts list.inspect
     list.compact
