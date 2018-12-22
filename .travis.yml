@@ -18,8 +18,8 @@ jobs:
       script:
         - bundle install
         - bundle exec rspec
-      before_deploy:
-        - bundle install  
+      # before_deploy:
+      #   - bundle install  
       deploy:
         - provider: script
           script: bash scripts/loc.sh
