@@ -60,8 +60,7 @@ class AwsInstanceCreation
 
   def get_instance_ip
     puts "get_instance_ip inspect #{@list}"
-    puts @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
-    return @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+    @list["#{ENV['TRAVIS_BRANCH']}"][:pub_address]
   end
 
 
@@ -71,14 +70,13 @@ infra = AwsInstanceCreation.new
 existing_list = infra.get_existing_instances_list
 if !existing_list.nil? && existing_list.keys.include?("#{ENV['TRAVIS_BRANCH']}")
   puts "existing_list #{existing_list.inspect}"
-  public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+  public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"][:pub_address]
   puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already and IP address of the instance is #{public_ip_address}"  
-  infra.create_instance if existing_list["#{ENV['TRAVIS_BRANCH']}"]["ins_status"] != "running"
+  infra.create_instance if existing_list["#{ENV['TRAVIS_BRANCH']}"][:ins_status] != "running"
 else
   puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance
 end
-
 ip_address_for_target_machine = infra.get_instance_ip
 puts "infra ip #{ip_address_for_target_machine}"
 system("./deploy.sh #{ip_address_for_target_machine}")
