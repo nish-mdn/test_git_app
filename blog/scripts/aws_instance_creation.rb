@@ -25,6 +25,7 @@ class AwsInstanceCreation
         end  
       end
     end
+    @list
   end
 
   def create_instance
