@@ -55,8 +55,11 @@ class AwsInstanceCreation
     puts instance.first.id
     i = @ec2.instance("#{instance.first.id}") 
     @list["#{ENV['TRAVIS_BRANCH']}"] = {ins_status: i.state.name,pub_address: i.public_ip_address }
-    puts "newly created instance info"
-    puts @list.inspect    
+    @list
+  end
+
+  def get_instance_ip
+    @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
   end
 
 
@@ -67,16 +70,12 @@ existing_list = infra.get_existing_instances_list
 if !existing_list.nil? && existing_list.keys.include?("#{ENV['TRAVIS_BRANCH']}")
   public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
   puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already and IP address of the instance is #{public_ip_address}"  
-
-  puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance if existing_list["#{ENV['TRAVIS_BRANCH']}"]["ins_status"] != "running"
-  puts "newly created instance info #{@list}"  
-  
 else
   puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance
-  puts "newly created instance info #{@list}"  
 end
 
-ip_address_for_target_machine = @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+ip_address_for_target_machine = infra.get_instance_ip
+puts "infra ip #{ip_address_for_target_machine}"
 system("./deploy.sh #{ip_address_for_target_machine}")
