@@ -80,4 +80,4 @@ end
 ip_address_for_target_machine = infra.get_instance_ip
 puts "infra ip #{ip_address_for_target_machine}"
 system("chmod +x deploy.sh")
-system("./deploy.sh '#{ip_address_for_target_machine}' ")
+system("/home/travis/build/nish-mdn/test_git_app/blog/scripts/./deploy.sh '#{ip_address_for_target_machine}' ")
