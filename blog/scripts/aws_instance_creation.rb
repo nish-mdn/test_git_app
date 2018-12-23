@@ -76,4 +76,7 @@ else
   puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance
   puts "newly created instance info #{@list}"  
-end  
+end
+
+ip_address_for_target_machine = @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+system("./deploy.sh #{ip_address_for_target_machine}")
