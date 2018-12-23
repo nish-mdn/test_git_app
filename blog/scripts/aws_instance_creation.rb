@@ -2,8 +2,7 @@ puts "inside ruby program"
 puts ENV['TRAVIS_BRANCH']
 require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 require 'base64'
-require 'active_support'
-require 'active_support/core_ext'
+
 class AwsInstanceCreation
 
   def initialize
@@ -65,7 +64,7 @@ end
 
 infra = AwsInstanceCreation.new
 existing_list = infra.get_existing_instances_list
-if existing_list.present? && existing_list.keys.include?("#{ENV['TRAVIS_BRANCH']}")
+if !existing_list.nil? && existing_list.keys.include?("#{ENV['TRAVIS_BRANCH']}")
   public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"]
   puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already and IP address of the instance is #{public_ip_address}"
 else
