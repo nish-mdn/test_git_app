@@ -2,7 +2,8 @@ puts "inside ruby program"
 puts ENV['TRAVIS_BRANCH']
 require 'aws-sdk-ec2'  # v2: require 'aws-sdk'
 require 'base64'
-
+require 'active_support'
+require 'active_support/core_ext'
 class AwsInstanceCreation
 
   def initialize
