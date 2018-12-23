@@ -60,7 +60,8 @@ class AwsInstanceCreation
 
   def get_instance_ip
     puts "get_instance_ip inspect #{@list}"
-    @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+    puts @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+    return @list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
   end
 
 
