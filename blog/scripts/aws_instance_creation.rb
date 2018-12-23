@@ -79,4 +79,4 @@ else
 end
 ip_address_for_target_machine = infra.get_instance_ip
 puts "infra ip #{ip_address_for_target_machine}"
-system("./deploy.sh #{ip_address_for_target_machine}")
+system("./deploy.sh '#{ip_address_for_target_machine}' ")
