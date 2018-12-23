@@ -53,7 +53,7 @@ class AwsInstanceCreation
     instance.first.create_tags({ tags: [{ key: 'developers-group', value: "#{ENV['TRAVIS_BRANCH']}"}]})
 
     puts instance.first.id
-    i = ec2.instance("#{instance.first.id}") 
+    i = @ec2.instance("#{instance.first.id}") 
     @list["#{ENV['TRAVIS_BRANCH']}"] = i.public_ip_address
     puts "newly created instance info"
     puts @list.inspect    
