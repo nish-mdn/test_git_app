@@ -16,6 +16,7 @@ class AwsInstanceCreation
     # and tag value 'MyGroovyGroup':
     @ec2.instances.each do |instance|
       #list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
+      puts "instance public ip address #{instance.public_ip_address}"
       tags = instance.tags
       tags.each do |tag|
         if tag.key == "developers-group"
