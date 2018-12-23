@@ -6,7 +6,7 @@ require 'base64'
 class AwsInstanceCreation
 
   def initialize
-        Aws.config.update({region: 'us-east-1',credentials: Aws::Credentials.new("#{ENV['AWS_ACCESS_KEY']}", "#{ENV['AWS_SECRET_ACCESS_KEY']}")})
+    Aws.config.update({region: 'us-east-1',credentials: Aws::Credentials.new("#{ENV['AWS_ACCESS_KEY']}", "#{ENV['AWS_SECRET_ACCESS_KEY']}")})
     @ec2 = Aws::EC2::Resource.new(region: 'us-east-1')
     @list = {}
   end
@@ -21,7 +21,7 @@ class AwsInstanceCreation
       tags = instance.tags
       tags.each do |tag|
         if tag.key == "developers-group"
-          @list[tag.value] = instance.public_ip_address 
+          @list[tag.value] = {ins_status: instance.state.name,pub_address: instance.public_ip_address }
         end  
       end
     end
@@ -54,7 +54,7 @@ class AwsInstanceCreation
 
     puts instance.first.id
     i = @ec2.instance("#{instance.first.id}") 
-    @list["#{ENV['TRAVIS_BRANCH']}"] = i.public_ip_address
+    @list["#{ENV['TRAVIS_BRANCH']}"] = {ins_status: i.state.name,pub_address: i.public_ip_address }
     puts "newly created instance info"
     puts @list.inspect    
   end
@@ -65,10 +65,15 @@ end
 infra = AwsInstanceCreation.new
 existing_list = infra.get_existing_instances_list
 if !existing_list.nil? && existing_list.keys.include?("#{ENV['TRAVIS_BRANCH']}")
-  public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"]
-  puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already and IP address of the instance is #{public_ip_address}"
+  public_ip_address = existing_list["#{ENV['TRAVIS_BRANCH']}"]["pub_address"]
+  puts "for #{ENV['TRAVIS_BRANCH']} branch instance available already and IP address of the instance is #{public_ip_address}"  
+
+  puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
+  infra.create_instance if existing_list["#{ENV['TRAVIS_BRANCH']}"]["ins_status"] != "running"
+  puts "newly created instance info #{@list}"  
+  
 else
   puts "Going to create a new instance for a branch #{ENV['TRAVIS_BRANCH']}"
   infra.create_instance
-  puts "newly created instance info #{@list}"
+  puts "newly created instance info #{@list}"  
 end  
