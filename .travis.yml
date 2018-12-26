@@ -35,9 +35,9 @@ jobs:
       script:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
-        email:
+        email: true
           recipients:
-            - madhan.ayyasamy@idexcel.com
+            - madhantry@gmail.com
           on_success: always
           on_failure: always
         on:
