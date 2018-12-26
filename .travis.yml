@@ -35,7 +35,7 @@ jobs:
       script:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
-        email: true
+        email:
           recipients:
             - madhantry@gmail.com
           on_success: always
