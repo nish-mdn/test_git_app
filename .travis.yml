@@ -33,12 +33,16 @@ jobs:
       install:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts 
       script:
-        - cat ${TRAVIS_HOME}/.ssh/known_hosts              
+        - cat ${TRAVIS_HOME}/.ssh/knowddn_hosts              
       notifications:
         email:
+          recipients:
+            - madhan.ayyasamy@idexcel.com
           on_success: always
           on_failure: always
-
+        on:
+          all_branches: true
+          condition: $TRAVIS_BRANCH =~ ^developer*          
     - stage: deploy on prod
       if: branch = master
       before_install:
