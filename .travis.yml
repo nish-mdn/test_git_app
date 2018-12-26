@@ -33,7 +33,7 @@ jobs:
       install:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts 
       script:
-        - cat ${TRAVIS_HOME}/.ssh/knowddn_hosts              
+        - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
         email:
           recipients:
