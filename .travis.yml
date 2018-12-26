@@ -38,8 +38,8 @@ jobs:
         email:
           recipients:
             - madhan.ayyasamy@idexcel.com
-          on_success: always
-          on_failure: always
+            on_success: always
+            on_failure: always
         on:
           all_branches: true
           condition: $TRAVIS_BRANCH =~ ^developer*          
