@@ -30,6 +30,12 @@ jobs:
           on:
             all_branches: true
             condition: $TRAVIS_BRANCH =~ ^developer*
+      notifications:
+        email:
+          recipients:
+            - madhan.ayyasamy@idexcel.com
+          on_success: always
+          on_failure: always
     - stage: deploy on prod
       if: branch = master
       before_install:
