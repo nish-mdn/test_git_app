@@ -36,12 +36,9 @@ jobs:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
         email:
-          recipients:
-            - madhantry@gmail.com
           on_success: always
           on_failure: always
-        on:
-          all_branches: true
+
     - stage: deploy on prod
       if: branch = master
       before_install:
