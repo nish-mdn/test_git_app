@@ -17,7 +17,7 @@ class AwsInstanceCreation
     # and tag value 'MyGroovyGroup':
     @ec2.instances.each do |instance|
       #list <<  i.tags.select{|tag| tag.key == "developers-group"}.first.try(:value)
-      puts "instance public ip address #{instance.public_ip_address}"
+      #puts "instance public ip address #{instance.public_ip_address}"
       tags = instance.tags
       tags.each do |tag|
         if tag.key == "developers-group"
@@ -52,14 +52,14 @@ class AwsInstanceCreation
 
     instance.first.create_tags({ tags: [{ key: 'developers-group', value: "#{ENV['TRAVIS_BRANCH']}"}]})
 
-    puts instance.first.id
+    #puts instance.first.id
     i = @ec2.instance("#{instance.first.id}") 
     @list["#{ENV['TRAVIS_BRANCH']}"] = {ins_status: i.state.name,pub_address: i.public_ip_address }
     @list
   end
 
   def get_instance_ip
-    puts "get_instance_ip inspect #{@list}"
+    #puts "get_instance_ip inspect #{@list}"
     @list["#{ENV['TRAVIS_BRANCH']}"][:pub_address]
   end
 
@@ -78,6 +78,6 @@ else
   infra.create_instance
 end
 ip_address_for_target_machine = infra.get_instance_ip
-puts "infra ip #{ip_address_for_target_machine}"
-system("chmod +x deploy.sh")
+#puts "infra ip #{ip_address_for_target_machine}"
+system("chmod +x dynamic_ip_deploy.sh")
 system("/home/travis/build/nish-mdn/test_git_app/blog/scripts/./dynamic_ip_deploy.sh '#{ip_address_for_target_machine}' ")
