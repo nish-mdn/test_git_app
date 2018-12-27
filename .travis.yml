@@ -31,15 +31,13 @@ jobs:
       #       all_branches: true
       #       condition: $TRAVIS_BRANCH =~ ^developer*
       install:
-        - cat ${TRAVIS_HOME}/.ssh/known_hosts 
+        - cat ${TRAVIS_HOME}/.ssh/kndown_hosts 
       script:
         - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
         email:
-          recipients:
-            - madhan.ayyasamy@idexcel.com
-          on_success: :always
-          on_failure: :always
+          on_success: always
+          on_failure: always
         on:
           all_branches: true
           condition: $TRAVIS_BRANCH =~ ^developer*          
