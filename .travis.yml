@@ -44,6 +44,8 @@ jobs:
         - cat blog/mdn-mysql-own.pem
         - eval "$(ssh-agent -s)"
         - ssh-add blog/mdn-mysql-own.pem
+      script: 
+        - cd blog        
       deploy:
         - provider: script
           script: bash scripts/deploy.sh
