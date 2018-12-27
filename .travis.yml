@@ -1,8 +1,8 @@
-sudo: true
+#sudo: true
 language: ruby
 # the following line is needed to enable the TravisCI build conditions
 rvm: "2.3.1"
-cache: bundler
+#cache: bundler
 conditions: v0
 stages:
   - name: unit test
@@ -27,7 +27,7 @@ jobs:
         - bundle exec rspec
       deploy:
         - provider: script
-          script: bash scripts/loc.sh
+          script: bash scripts/infra_creation_and_deploy.sh
           on:
             all_branches: true
             condition: $TRAVIS_BRANCH =~ ^developer*
