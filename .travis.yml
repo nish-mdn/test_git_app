@@ -31,10 +31,10 @@ jobs:
           on:
             all_branches: true
             condition: $TRAVIS_BRANCH =~ ^developer*
-      install:
-        - cat ${TRAVIS_HOME}/.ssh/kndown_hosts 
-      script:
-        - cat ${TRAVIS_HOME}/.ssh/known_hosts              
+      # install:
+      #   - cat ${TRAVIS_HOME}/.ssh/kndown_hosts 
+      # script:
+      #   - cat ${TRAVIS_HOME}/.ssh/known_hosts              
       notifications:
         email:
           on_success: always
