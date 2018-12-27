@@ -12,8 +12,8 @@ jobs:
   include:
     - stage: unit test
       env:
-        - secure: "TX020sdv8l+kmzyZFPJm6XlWuoxGIGgqN8KiYknkDS7dlYSTNCMxD3ul35yh/9sOgyr5RV9xvDJwkipV0a+NISuNq59f4jAGoa+Cl9LY6lwWHEoxpptL+p9pT+8BgVjLDumGShOutdLYEB5MHklixcuqrp1XcXUs6SuXFzZpE+FPWxBGtZR7CmOOjkUPZdDOwMw+TCllio6KJ3/QO4WlxnOnOuFajCxYLurPODX6nQkdDYTq87q+U9msOUG9Ygb4hAJFlykCEER3YzoNMf3Uhb1d+kkZNlLPx4OUtRAfP/b7xiEYJZFTx90grrspgGHL2lxtsAh5A6SGTvjM2Fo2r+uw1dJkc9DG70CG7aaAhR4VTyVWH1Y/NdrVwN+M9sx5fBmhW8wZkkOvK0Cjm/nB5AyMK/veFT6BPcUgIFCB7UlY6J1bqBpYY/9M9RlrMLO3/+1Id3vXtE3IZ9BYVsAqpn0MTdx2UiVDRZ8KNmJ7oZHWVjIeXgbJVSuYoQahRfP9sWSBy0sBu+ybwQrIt98nJ+cHxvxXLEUeApdH16yp7Q1AQhYfQXS02NvDN1Aow90WWCbF0w+B5fxQVYh8IUR4XA+vDoRoc7CYgLkvAuB1OCNq//pUW6yx16s18gwv1Y4i+LIouMg7ZtCGRON8AWunL4L7U9zMT5V7QM0j6qgUHEc="
-        - secure: "lezuHkwMQhYP/sB82SW1ealgJpBZ2K21yC7K7bUKe4KPs91DnS+iK+Pzoc2F7XZusCm1jyu+kQkzCZxUXfYY1bK9d1pAOPAjc+28TiIJoHYnJUja6zGHSnG/6JQSmaU5lKNGCKCSDJvdWY18aijOX8InT7k559kZq131yuV6okRv1VXAcy6vsumIoa7zCSKDxnWoFkIdGzbj9VHOfcz+44HGICI5t+eQLJISrXem8b3pV39uMXTnlB/9/cF36qVWZbMQKuNLb+pltfPoaeupLogvGm74jVT93SOUqrpCuB91NZGvhqU72+wush2zPsNz7Kkg1Yz3tuc6sqxB09lowq+13tCi85Ke5BVXfqYvnB/5rIpz+jDVv45lVDm8fPFIFl4hL8hIN1B49iuCcd/WyPyVyvNsHLJBYivbw8g6y45zu4SvKUq0USDOAnxws/5kL3GYqCxlAwCiuYQLzDFpu4iITn5pq0CpOo80wT+B8wDXrd+KazSBYkBHF1c8jL27tfPbV0f1N32wb1iALbBUv/fhWXOY1lj8bKUnkhD605u0iJLN9rhrSLzblS71neInDGCW/EhdHlmXNeAgRHknNl1cRdJgzTVXzsBiompwJQjhTM8hg9rto7kDinU6EsXWL11Exi1nfZkEFsBjmUk5oAlc4AulWRcsn06SK8KUNbo="
+        - secure: "YszrShUnGfmOjFoWmeIpj6+GbndPqbS2NArMT9SVAzBQceMygCvl7RNzbjXWJ7t+C0YJTJkanI8F7aKfmhWjDKqsyajmdLqdP8BfdzajNmJQVhIhQqO9rzst/WGOaEFQEHsp8S+Y/6B4fKcmBoXd7O6lDBKJx7/VfLhZ1WBgFUkVxqjzzzDoIdRfCQWLOVXRsNO38eQ1fa+TOGxk50LRaqOAD2ozYqAjtFf/nA3NMWXgXkMb6r02jt1UC+m47tVPXEkJ6vW1Y89oXxWKvQ8V5YgfS5483OWIlFkYowTXPDK7BaN7G4kO5mJwwISkCtyDxlqxskETLWW4EBzxJzJYeNHa1TXpkWP4qmb3f14v3pasA7duSjLqy9xA0zARA21Hsnz319KgWcLNj3NXDvKrpxNRg1kwM0Zfft4Wpm9w79yiuC59GIFJgcxP7ykS6wXOCR3xvUbFQAk8BKmeW/aaw9ojBijkhdyvVQPmhzyf7/y9xC8XABZ+cXmLpLk4yEM0ci+dgaM5Gb4tJHA8P9yC+lAewEnhP4udxFlOR4CL/BoTjhfxYE2CQHlt5yT55JJp1OuyBVU9ufURKj/zEmH8wK4Ws4QdBOCQyxKlxgHXkKxMPTzPN6jByPQxcfXU5v06oNgBuy4eYeRjRvKdldmra1woZPueyjOYCkYPfiqbLJI="
+        - secure: "uql4D19XWp9l/cqFFtOucjCHWMkA0l6KSzMNB/ImoWe+dmmmN3B6nyAbEMCAfc26L74D67+GrkR+aSMqpY8/T71SrFhO0tDrOk7SH7pnOx34w9z/DFvwXBOu883hAL1jMAa8uuWj6oTjWfxYRlOWK9qP+3vZs80JT7f//P5ESR1QmqjXHFN0zjjNQRPSZkVhjSrMSFL8QNsr36j402UUP/TWuObeBhikTZZji76P5r/vNrBti7EqRB1zG7Lu+VA8EBycr/OIsjK0T3FCFjM5AvjfxsO/6xBqf2EpZjJH6CSUfYTH4DHbS/4WadOxt3y4CWuAglfYV0DeVzGGYI69DvI7AmoDCIEfSmETU5vIAPnb3o8eIfnUFdItz1Wd7BWbGHgqD3krZdBa7+ssfb4wvwZzdem2rJUTwy6OPhTpY+PjUiVqMFL+KFBbvSf5Flxuk6qbKjJp9/kSz6/RFRlK40HIxOkd6eM09BZ4rpgQSFoeT6BlVwOh+TZFi4bqwc8a8Dfti55pduD7fCw6Rtc9U/7rwODUPc/IWMViMygQWh+F2D/uQMMtIRL5ItVq5F2SrjiwluP8cLcodbJkILBmp8XJtXieqLtIJCBvsdU7zJU53DG+DDpXkNnXpA9p90sPI9Y77Y0b1igfXbPepVh4AXUrFUs8XJ0ae1hR5rJWPl4="
       if: branch =~ /^developer*/
       before_install:
         - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/mdn-mysql-own.pem.enc -out blog/mdn-mysql-own.pem -d
@@ -40,7 +40,7 @@ jobs:
         on:
           all_branches: true
           condition: $TRAVIS_BRANCH =~ ^developer*         
-           
+
     - stage: deploy on prod
       if: branch = master
       before_install:
@@ -49,13 +49,6 @@ jobs:
         - cat blog/mdn-mysql-own.pem
         - eval "$(ssh-agent -s)"
         - ssh-add blog/mdn-mysql-own.pem
-      # install:
-      #   - echo 'amazonaws.com,100.27.38.68 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG4W/WtjgGSPQdLthvsT9Vu2UZtEv9SRusr87+dxx8zENXfuAmiSYFf9Y3p7mMGKylTF5RscoWv3hNKq29sJhBCam81MJfuW30SBtRwVgvNiJ7WCAPyFJnIbqxJyTuM3bjX5BvoQGPuL2VjBc+opBHZtxV5EbrNJpmmd6C1afaX8wMMhpwgHoCO1mexofq+1OkDACwrSXVEJP/MaIhMUWqt8F45eJXZTf8JfdlAQsC8qofpcc9Iqy45qrkswTrBL6WGWllhITIX8kewl8bxYw4UGsYab0nIN8pEA2y04/CKeDFumIPtCgyOt0p0/XH1PYrkVXeHCW1ISXn3YmqFN2X==' >> ${TRAVIS_HOME}/.ssh/known_hosts
-      #   - cat ${TRAVIS_HOME}/.ssh/known_hosts
-      # addons:
-      #   ssh_known_hosts: 
-      #     - 172.31.15.186
-      #     - 100.27.38.68
       deploy:
         - provider: script
           script: bash scripts/deploy.sh
