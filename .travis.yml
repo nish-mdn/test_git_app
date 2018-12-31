@@ -1,7 +1,7 @@
 #sudo: true
 language: ruby
 rvm: "2.3.1"
-conditions: v1
+conditions: v0
 addons:
   artifacts:
     - secure: "CMMqm3OzPgXG0uS2YHupjoylRd0Hd0aiWw0fdBFita64Qr37LESAdsnSfVr2C4Re3LRp9zzc3Z/XOv5uLqa1w/2U7nEISrUtZsp1EfXlzjO61q/6srgKtS17maH8IK1fF/+5j2YSeiwn+LcR95mzyn2q/4Yigj2prxQL5V/pww7QXagoKMtS0gI5JISFIlA2UD+MPPp5hHHRaAV2R3srXk3d7W1AEflJjdkIWPHmPqJ6S4BNb4uG6m3BXQT/cp5q6JVvPfOYBM+s6nHkHQRj7GyVAcJPuceWuS691118K8vGsXSFvrRveQhVJ4EP5U7lZVtSvnGr2zilObZexSyEWwgDk1CnX8yVwGQCfJfTkyp1OCbvLCNLEapGtAboWW9xzqd2EAfemkRXGSoCN5HAE+43MNpCZKaYtfHoREq9lkRQLOa6bDFb8GWX/eFCwVMKYrRopAL7esmbuxT09RXnMc+lAL62ONQF/PK82FZuESqQyFKT8pw+34n9L24jbuWtIWsm5+AR3QypD3frvqlPx6YcllOlSV0ddRdqyjGACIHpLP1q7n5Y4aHcPumxYCwS6803fGcbJGJ6y5QC6Hg4ZOq97gK4Roqjin0hH8dvrfctnGMLcSRz1OJ+d1ytYLL5AVm8QGBUTeBHBcSvKsDfn2NCalf+AurHsbx53M3BV5c=" 
@@ -13,7 +13,6 @@ jobs:
   include:
     - stage: staging
       if: branch =~ /^travis_aws_code_deploy*/
-     
       before_script: 
         - cd blog
       script:
