@@ -12,7 +12,7 @@ jobs:
           paths:
             - $(git ls-files | tr "\n" ":")
           target_paths:
-            - my-test-build
+            - my-test-build/blog
           debug: true
       env:
         - secure: "EH+nZmMyDWUzhVzlN/Dn76u8xpWHpRWJGxOBmzjh4Tm7nf46wYX78n2287K4BUvjo0lo7L1WZ8A0ybr+C36eK5ndHw7VtEj8AFPjKhMMMWBXl97uBCb/ZBuN61WQ/j9Bc1Rm68xmCdLyMfN5OgwUW3p1C5ZmLH8HtIFowmbmwBidkD/VryVxGEis6G1Pwo8LjR/av9qdqyqmwXEa+l8tBh9KAKYcLA6JqTDyCfKbGSFtQhds81kzED71b/8x9cQJHZk5+pfKLJnusMcaItjpyu5JvZbGuzlyjeQ7g1Pd5Qp6KKYJMfred75dx2IwZ2/fKh9gYzonT//pTainnQS9MAvEQEf4QJ1G94rkVLUYVQBBDvHxXRNbxGQ/cMQGH+zcSXULRjCnLiEcBzVhILQJLJcmktZ6Z3IB73cVYnaRfBxbmRPv1B4C1Kxoc2acoQZKPLQ1EC7+OcUruB+Os7A7L2wdJ+Hv9cdWwYMlwVgbiFQW665fps0CBHd7Qwhft0f7iIutF4+QfgQ6NPax3vsS6keXIxUNQkhAJxh7JSPDXG85/8nczb5dzXUoWMEGt75EdpTtcjRhHEVTOURSfF1hPnmIyZ3XSIk8OPtdsmFge6YmLGNmZnyeWdpn7a9C2wiaTwYSu5q4VNe+PNv0qPtwS9S8J9FsVwu5v/GuoBZCfh8="
