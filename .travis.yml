@@ -9,9 +9,9 @@ jobs:
     - stage: staging
       addons:
         artifacts:
-          paths:
-            - $HOME/build/nish-mdn/test_git_app/
-          debug: true
+          working_dir:
+            - blog
+          # debug: true
       env:
         - secure: "EH+nZmMyDWUzhVzlN/Dn76u8xpWHpRWJGxOBmzjh4Tm7nf46wYX78n2287K4BUvjo0lo7L1WZ8A0ybr+C36eK5ndHw7VtEj8AFPjKhMMMWBXl97uBCb/ZBuN61WQ/j9Bc1Rm68xmCdLyMfN5OgwUW3p1C5ZmLH8HtIFowmbmwBidkD/VryVxGEis6G1Pwo8LjR/av9qdqyqmwXEa+l8tBh9KAKYcLA6JqTDyCfKbGSFtQhds81kzED71b/8x9cQJHZk5+pfKLJnusMcaItjpyu5JvZbGuzlyjeQ7g1Pd5Qp6KKYJMfred75dx2IwZ2/fKh9gYzonT//pTainnQS9MAvEQEf4QJ1G94rkVLUYVQBBDvHxXRNbxGQ/cMQGH+zcSXULRjCnLiEcBzVhILQJLJcmktZ6Z3IB73cVYnaRfBxbmRPv1B4C1Kxoc2acoQZKPLQ1EC7+OcUruB+Os7A7L2wdJ+Hv9cdWwYMlwVgbiFQW665fps0CBHd7Qwhft0f7iIutF4+QfgQ6NPax3vsS6keXIxUNQkhAJxh7JSPDXG85/8nczb5dzXUoWMEGt75EdpTtcjRhHEVTOURSfF1hPnmIyZ3XSIk8OPtdsmFge6YmLGNmZnyeWdpn7a9C2wiaTwYSu5q4VNe+PNv0qPtwS9S8J9FsVwu5v/GuoBZCfh8="
         - secure: "f2QrrDCxnxLwH4inbv/CgWZZYzwl1zLUfVFjQB0ZvJdbU0mETKlGR1jJ/JHrgh40nN5WW9a3v5qURETt7TlV57QadcsjOPrH+1GP11wKF72dO81YMeLlM1sS8KirSxhl1656YyBiyKtpJr2aWMCs8e/mClFgmKP5nM5tm6zn4iEN9ERF/Nd0rVnMhNsq3lvCtJWSfs3sPfssOg7rkgcLl6gxEW9ys0r5uII0nUcfFW65SBZNlt2US+/hyz/zt+il6rtLr4rya4/XtIQ8r4aGKS+UO/3TCIj0dFyjcv59yxYimWZDpONZPWz1P47jsKbcAlFV8CO2XxXNaUXMX61SqFBYs7E0kq6fqqNkCA6Lcaw6+YT1r3JtOgNaR7lMdpDT9f7kZuGU05Bhq4GtsSLtXEsdriI+LSu6/dfgk7xfHJU2Gh2VQfAcNfcVd/DQyzRqiwPiFyn06jeDabvnmCx5LQZNPub+irLJtL8Oa3M8ciWLu7UMqKubqsAn28/J0XrYVc/DGlueb5HR+4WRdbU9yGA7CjGQe43bQ1SfZduMQHR5rN7eeo28TzNW0Ac1y/RddN2no3ommPY0sm63gvFM1AhnZk6KyH+5ch5woiCZrJ4QC6VQuZ/sPJXau2HbBCmLhUA1nV23C+SAItAQxHy1CB5pJr18Lp2c3MDZu39VZXg="
