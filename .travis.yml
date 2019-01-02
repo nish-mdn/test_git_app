@@ -10,7 +10,7 @@ jobs:
       addons:
         artifacts:
           working_dir:
-            - ./blog
+            - $TRAVIS_BUILD_DIR/blog
           target_paths:
             - my-test-build
           debug: true
@@ -21,6 +21,8 @@ jobs:
       if: branch =~ /^travis_aws_code_deploy*/
       before_script: 
         - cd blog
+        - cat $TRAVIS_BUILD_DIR
+        - cat $HOME
       script:
         - bundle install
         - bundle exec rspec
