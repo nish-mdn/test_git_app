@@ -10,7 +10,7 @@ jobs:
       addons:
         artifacts:
           working_dir:
-            - $TRAVIS_BUILD_DIR/blog/
+            - $TRAVIS_BUILD_DIR/blog/*
           target_paths:
             - my-test-build
           debug: true
