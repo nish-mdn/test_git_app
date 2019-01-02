@@ -45,7 +45,8 @@ jobs:
         - eval "$(ssh-agent -s)"
         - ssh-add blog/mdn-mysql-own.pem
       script: 
-        - cd blog        
+        - cd blog
+        - cat $TRAVIS_TAG        
       deploy:
         - provider: script
           script: bash scripts/deploy.sh
