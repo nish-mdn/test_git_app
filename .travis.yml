@@ -9,8 +9,8 @@ jobs:
     - stage: staging
       addons:
         artifacts:
-          working_dir:
-            - $TRAVIS_BUILD_DIR/blog/*
+          paths:
+            - $(git ls-files | tr "\n" ":")
           target_paths:
             - my-test-build
           debug: true
