@@ -10,7 +10,7 @@ jobs:
       addons:
         artifacts:
           working_dir:
-            - /home/travis/build/nish-mdn/test_git_app/blog/
+            - ./blog
           target_paths:
             - my-test-build
           debug: true
