@@ -31,7 +31,8 @@ jobs:
           access_key_id: $AWS_ACCESS_KEY
           secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: "mdn-codedeploy-artifact"
-          key: my-test-build/blog
+          key: my-test-build/latest/artifact.zip
+          bundle_type: zip
           application: mdn-codedeploy
           deployment_group: mdn_deployment_group
           on:
