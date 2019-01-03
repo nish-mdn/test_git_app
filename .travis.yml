@@ -51,4 +51,4 @@ jobs:
           script: bash scripts/deploy.sh
           on:
             tags: true
-            condition: $TRAVIS_BRANCH == conditional_build
+            condition: $TRAVIS_BRANCH =~ ^tag 
