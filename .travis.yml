@@ -31,5 +31,7 @@ jobs:
           bucket: "mdn-codedeploy-artifact"
           key: my-test-build/blog
           application: mdn-codedeploy
-          deployment_group: mdn_deployment_group        
+          deployment_group: mdn_deployment_group
+          on:
+            all_branches: true
 
