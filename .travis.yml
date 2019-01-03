@@ -28,6 +28,8 @@ jobs:
         - bundle exec rspec
       deploy:  
         - provider: codedeploy
+          access_key_id: $AWS_ACCESS_KEY
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
           bucket: "mdn-codedeploy-artifact"
           key: my-test-build/blog
           application: mdn-codedeploy
