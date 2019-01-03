@@ -39,7 +39,7 @@ jobs:
     - stage: production
       branches:
         only:
-          - master
+          #- master
           - /^tag*/
       #if: branch = master
       before_install:
@@ -56,3 +56,4 @@ jobs:
           script: bash scripts/deploy.sh
           on:
             tags: true
+            branch: master
