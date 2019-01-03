@@ -24,4 +24,11 @@ jobs:
       script:
         - bundle install
         - bundle exec rspec
+      - provider: codedeploy
+        - secure: "YszrShUnGfmOjFoWmeIpj6+GbndPqbS2NArMT9SVAzBQceMygCvl7RNzbjXWJ7t+C0YJTJkanI8F7aKfmhWjDKqsyajmdLqdP8BfdzajNmJQVhIhQqO9rzst/WGOaEFQEHsp8S+Y/6B4fKcmBoXd7O6lDBKJx7/VfLhZ1WBgFUkVxqjzzzDoIdRfCQWLOVXRsNO38eQ1fa+TOGxk50LRaqOAD2ozYqAjtFf/nA3NMWXgXkMb6r02jt1UC+m47tVPXEkJ6vW1Y89oXxWKvQ8V5YgfS5483OWIlFkYowTXPDK7BaN7G4kO5mJwwISkCtyDxlqxskETLWW4EBzxJzJYeNHa1TXpkWP4qmb3f14v3pasA7duSjLqy9xA0zARA21Hsnz319KgWcLNj3NXDvKrpxNRg1kwM0Zfft4Wpm9w79yiuC59GIFJgcxP7ykS6wXOCR3xvUbFQAk8BKmeW/aaw9ojBijkhdyvVQPmhzyf7/y9xC8XABZ+cXmLpLk4yEM0ci+dgaM5Gb4tJHA8P9yC+lAewEnhP4udxFlOR4CL/BoTjhfxYE2CQHlt5yT55JJp1OuyBVU9ufURKj/zEmH8wK4Ws4QdBOCQyxKlxgHXkKxMPTzPN6jByPQxcfXU5v06oNgBuy4eYeRjRvKdldmra1woZPueyjOYCkYPfiqbLJI="
+        - secure: "uql4D19XWp9l/cqFFtOucjCHWMkA0l6KSzMNB/ImoWe+dmmmN3B6nyAbEMCAfc26L74D67+GrkR+aSMqpY8/T71SrFhO0tDrOk7SH7pnOx34w9z/DFvwXBOu883hAL1jMAa8uuWj6oTjWfxYRlOWK9qP+3vZs80JT7f//P5ESR1QmqjXHFN0zjjNQRPSZkVhjSrMSFL8QNsr36j402UUP/TWuObeBhikTZZji76P5r/vNrBti7EqRB1zG7Lu+VA8EBycr/OIsjK0T3FCFjM5AvjfxsO/6xBqf2EpZjJH6CSUfYTH4DHbS/4WadOxt3y4CWuAglfYV0DeVzGGYI69DvI7AmoDCIEfSmETU5vIAPnb3o8eIfnUFdItz1Wd7BWbGHgqD3krZdBa7+ssfb4wvwZzdem2rJUTwy6OPhTpY+PjUiVqMFL+KFBbvSf5Flxuk6qbKjJp9/kSz6/RFRlK40HIxOkd6eM09BZ4rpgQSFoeT6BlVwOh+TZFi4bqwc8a8Dfti55pduD7fCw6Rtc9U/7rwODUPc/IWMViMygQWh+F2D/uQMMtIRL5ItVq5F2SrjiwluP8cLcodbJkILBmp8XJtXieqLtIJCBvsdU7zJU53DG+DDpXkNnXpA9p90sPI9Y77Y0b1igfXbPepVh4AXUrFUs8XJ0ae1hR5rJWPl4="
+        bucket: "mdn-codedeploy-artifact"
+        key: my-test-build/blog
+        application: mdn-codedeploy
+        deployment_group: mdn_deployment_group        
 
