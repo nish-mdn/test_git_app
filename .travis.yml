@@ -37,7 +37,7 @@ jobs:
           on_failure: always
 
     - stage: production
-      if: tag =~ ^tag# AND branch = conditional_build
+      if: tag =~ ^tag AND branch = conditional_build
       before_install:
         - openssl aes-256-cbc -K $encrypted_43cbdd85bbec_key -iv $encrypted_43cbdd85bbec_iv -in blog/mdn-mysql-own.pem.enc -out blog/mdn-mysql-own.pem -d
         - chmod 600 blog/mdn-mysql-own.pem
