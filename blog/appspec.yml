@@ -20,6 +20,6 @@ permissions:
   #     - file          
 hooks:
   AfterInstall:
-    - location: /home/ubuntu/blog/scripts/after_install.sh
+    - location: scripts/after_install.sh
       timeout: 30000
       runas: ubuntu
