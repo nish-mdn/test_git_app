@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/ubuntu
 permissions:
-  - object: /home/ubuntu/nish-mdn/test_git_app/blog/scripts
+  - object: scripts
     pattern: "*.sh"
     owner: ubuntu
     group: ubuntu
