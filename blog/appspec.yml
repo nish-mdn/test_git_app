@@ -13,8 +13,8 @@ permissions:
       - file
   - object: /opt/codedeploy-agent
     pattern: "*.lock"
-    owner: root
-    group: root
+    owner: ubuntu
+    group: ubuntu
     mode: 777
     type:
       - file          
