@@ -2,24 +2,24 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu
-# permissions:
-#   - object: scripts
-#     pattern: "*.sh"
-#     owner: ubuntu
-#     group: ubuntu
-#     mode: 777
-#     type:
-#       - file
-#   - object: /opt/codedeploy-agent
-#     pattern: "*.lock"
-#     owner: ubuntu
-#     group: ubuntu
-#     mode: 777
-#     type:
-#       - file          
+    destination: /home/ubuntu/blog
+permissions:
+  - object: /home/ubuntu/blog/scripts
+    pattern: "*.sh"
+    owner: ubuntu
+    group: ubuntu
+    mode: 777
+    type:
+      - file
+  # - object: /opt/codedeploy-agent
+  #   pattern: "*.lock"
+  #   owner: ubuntu
+  #   group: ubuntu
+  #   mode: 777
+  #   type:
+  #     - file          
 hooks:
   AfterInstall:
-    - location: scripts/rails_server_startup.sh
+    - location: /home/ubuntu/blog/scripts/after_install.sh
       timeout: 30000
       runas: ubuntu
