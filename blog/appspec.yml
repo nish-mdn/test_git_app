@@ -19,7 +19,7 @@ permissions:
   #   type:
   #     - file          
 hooks:
-  AfterInstall:
+  ApplicationStart:
     - location: scripts/after_install.sh
       timeout: 30000
       runas: ubuntu
