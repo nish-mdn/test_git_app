@@ -15,4 +15,4 @@ hooks:
   AfterInstall:
     - location: scripts/rails_server_startup.sh
       timeout: 30000
-      runas: ubuntu
+      runas: root
