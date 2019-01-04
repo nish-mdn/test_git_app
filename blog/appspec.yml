@@ -3,21 +3,21 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu
-permissions:
-  - object: scripts
-    pattern: "*.sh"
-    owner: ubuntu
-    group: ubuntu
-    mode: 777
-    type:
-      - file
-  - object: /opt/codedeploy-agent
-    pattern: "*.lock"
-    owner: ubuntu
-    group: ubuntu
-    mode: 777
-    type:
-      - file          
+# permissions:
+#   - object: scripts
+#     pattern: "*.sh"
+#     owner: ubuntu
+#     group: ubuntu
+#     mode: 777
+#     type:
+#       - file
+#   - object: /opt/codedeploy-agent
+#     pattern: "*.lock"
+#     owner: ubuntu
+#     group: ubuntu
+#     mode: 777
+#     type:
+#       - file          
 hooks:
   AfterInstall:
     - location: scripts/rails_server_startup.sh
