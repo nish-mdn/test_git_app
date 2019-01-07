@@ -23,9 +23,9 @@ jobs:
         - secure: "uY8pgaByDT8n5jhiH3nxZ0uuq3pCv9xnLedMGvLw0wkdIeTkaenTU18+gxlmzw47YaBkJhrMXXCZ0cLSMYiE88BWskuJe29rvV+eoSCH3+sA/O+chlfbOqsYHDw9PZrY9GeuN7kZ1UU1Mzcr+SJsINQLJDHI5vXYQxcsp+BY+AviVXP6KgB02rr65lbJs44iWcn3P6av8DifIrvk5uoBFx+Bxyg+TrDZyVRhRt57xjtP9zGioAHkV8fFTsdzP+ZH4AusHTEcM9vLWSFJWv2alvEboPvyPuLAyjjKdmp9D4T7j4ZS9lV/Dutn89YdsChN9bfMetNpRLGkoflogl8lDjOsGBU1D5c3ktoOKYPS7Ae3863pFROwzaWx0Nud/IfhU982KbFi4oZuvS/awaRKj5wg1PBYnr9twgb+E8nan9r+BS/WGGho38Z1OfYXLfcLL/u+/BJ1oL/b5pO+mjgdPGMtOFK0rWfyQPRayMo/FKutw217cfYcdnWqDRUB6EUslyozykYmCDUDPEN92Q88O4k34SbDxDr/sgxorm92M7dRIEJRr5/oaD9kjsTLMhzgTp8+SrNQtmb/Rx90bURO1+fFe6XBPIxwiuLaAeJOOn3LCueAoHb+y/BYHFUbPBrCGvFCJFlp9E2hHseDG9vzseD+n/x0Em5AOkZFQTw9qlk="
       if: branch =~ /^travis_aws_code_deploy*/
       before_script: 
-        - cd blog
+        - echo "awesome"
       script:
-        - cd blog
+        - echo "awesome"
         # - bundle install
         # - bundle exec rspec
       # before_deploy:
