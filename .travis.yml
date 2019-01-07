@@ -11,7 +11,6 @@ jobs:
         artifacts:
           paths:
             - $(git ls-files | tr "\n" ":")
-            - $(zip -r artifact1.zip $TRAVIS_BUILD_DIR)
           target_paths:
             - my-test-build/blog
           debug: true
@@ -25,7 +24,7 @@ jobs:
       before_script: 
         - echo "awesome"
       script:
-        - echo "awesome"
+        - ruby blog/scripts/upload_artifact_as_zip.rb
         # - bundle install
         # - bundle exec rspec
       # before_deploy:
