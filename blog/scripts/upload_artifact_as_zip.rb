@@ -9,12 +9,6 @@ class UploadArtifactAsZip
     @bucket = @s3.bucket("mdn-codedeploy-artifact")
   end
 
-  # def initialize
-  #   Aws.config.update({region: 'us-east-1',credentials: Aws::Credentials.new("AKIAIILF5TYQXCIEFS7A", "MgpflHArun0amHj8B1w8cFxYxIvYQun5SW0Em0mh")})
-  #   @s3 = Aws::S3::Resource.new
-  #   @bucket = @s3.bucket("mdn-codedeploy-artifact")
-  # end
-
   def create_zip_and_upload
     create_zip
     upload_artifact
