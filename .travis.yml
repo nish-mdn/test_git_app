@@ -11,6 +11,7 @@ jobs:
         artifacts:
           paths:
             - $(git ls-files | tr "\n" ":")
+            - zip -r artifact.zip $TRAVIS_BUILD_DIR 
           target_paths:
             - my-test-build/blog
           debug: true
@@ -24,17 +25,20 @@ jobs:
       before_script: 
         - cd blog
       script:
-        - bundle install
-        - bundle exec rspec
-      deploy:  
-        - provider: codedeploy
-          access_key_id: $AWS_ACCESS_KEY
-          secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: "mdn-codedeploy-artifact"
-          key: my-test-build/latest/artifact.zip
-          bundle_type: zip
-          application: mdn-codedeploy
-          deployment_group: mdn_deployment_group
-          on:
-            all_branches: true
+        - cd blog
+        # - bundle install
+        # - bundle exec rspec
+      # before_deploy:
+      #   - ruby scripts/   
+      # deploy:  
+      #   - provider: codedeploy
+      #     access_key_id: $AWS_ACCESS_KEY
+      #     secret_access_key: $AWS_SECRET_ACCESS_KEY
+      #     bucket: "mdn-codedeploy-artifact"
+      #     key: my-test-build/latest/artifact.zip
+      #     bundle_type: zip
+      #     application: mdn-codedeploy
+      #     deployment_group: mdn_deployment_group
+      #     on:
+      #       all_branches: true
 
