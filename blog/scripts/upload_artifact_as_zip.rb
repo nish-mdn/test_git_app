@@ -31,7 +31,7 @@ class UploadArtifactAsZip
     # Create the object to upload
     zip_obj = @bucket.object("my-test-build/latest/artifact.zip")
     # Upload it
-    zip_obj.upload_file("/home/likewise-open/IDEXCEL/amadhan/my_git/test_git_app/blog/artifact.zip")    	
+    zip_obj.upload_file("#{ENV['TRAVIS_BUILD_DIR']}/blog/artifact.zip")    	
   end 	
 
 end
