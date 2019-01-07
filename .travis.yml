@@ -13,7 +13,6 @@ jobs:
             - $(git ls-files | tr "\n" ":")
           target_paths:
             - my-test-build/blog
-          debug: true
       env:
         - secure: "EH+nZmMyDWUzhVzlN/Dn76u8xpWHpRWJGxOBmzjh4Tm7nf46wYX78n2287K4BUvjo0lo7L1WZ8A0ybr+C36eK5ndHw7VtEj8AFPjKhMMMWBXl97uBCb/ZBuN61WQ/j9Bc1Rm68xmCdLyMfN5OgwUW3p1C5ZmLH8HtIFowmbmwBidkD/VryVxGEis6G1Pwo8LjR/av9qdqyqmwXEa+l8tBh9KAKYcLA6JqTDyCfKbGSFtQhds81kzED71b/8x9cQJHZk5+pfKLJnusMcaItjpyu5JvZbGuzlyjeQ7g1Pd5Qp6KKYJMfred75dx2IwZ2/fKh9gYzonT//pTainnQS9MAvEQEf4QJ1G94rkVLUYVQBBDvHxXRNbxGQ/cMQGH+zcSXULRjCnLiEcBzVhILQJLJcmktZ6Z3IB73cVYnaRfBxbmRPv1B4C1Kxoc2acoQZKPLQ1EC7+OcUruB+Os7A7L2wdJ+Hv9cdWwYMlwVgbiFQW665fps0CBHd7Qwhft0f7iIutF4+QfgQ6NPax3vsS6keXIxUNQkhAJxh7JSPDXG85/8nczb5dzXUoWMEGt75EdpTtcjRhHEVTOURSfF1hPnmIyZ3XSIk8OPtdsmFge6YmLGNmZnyeWdpn7a9C2wiaTwYSu5q4VNe+PNv0qPtwS9S8J9FsVwu5v/GuoBZCfh8="
         - secure: "f2QrrDCxnxLwH4inbv/CgWZZYzwl1zLUfVFjQB0ZvJdbU0mETKlGR1jJ/JHrgh40nN5WW9a3v5qURETt7TlV57QadcsjOPrH+1GP11wKF72dO81YMeLlM1sS8KirSxhl1656YyBiyKtpJr2aWMCs8e/mClFgmKP5nM5tm6zn4iEN9ERF/Nd0rVnMhNsq3lvCtJWSfs3sPfssOg7rkgcLl6gxEW9ys0r5uII0nUcfFW65SBZNlt2US+/hyz/zt+il6rtLr4rya4/XtIQ8r4aGKS+UO/3TCIj0dFyjcv59yxYimWZDpONZPWz1P47jsKbcAlFV8CO2XxXNaUXMX61SqFBYs7E0kq6fqqNkCA6Lcaw6+YT1r3JtOgNaR7lMdpDT9f7kZuGU05Bhq4GtsSLtXEsdriI+LSu6/dfgk7xfHJU2Gh2VQfAcNfcVd/DQyzRqiwPiFyn06jeDabvnmCx5LQZNPub+irLJtL8Oa3M8ciWLu7UMqKubqsAn28/J0XrYVc/DGlueb5HR+4WRdbU9yGA7CjGQe43bQ1SfZduMQHR5rN7eeo28TzNW0Ac1y/RddN2no3ommPY0sm63gvFM1AhnZk6KyH+5ch5woiCZrJ4QC6VQuZ/sPJXau2HbBCmLhUA1nV23C+SAItAQxHy1CB5pJr18Lp2c3MDZu39VZXg="
@@ -21,25 +20,22 @@ jobs:
         - secure: "Syp59oVAgszdAg1lI7hFlqXai3TiuBTzWLuf2Jq6jUx2tA4EGkGdulpeZrjpb4BE3pc0U31PFVAxl6xLxS4bhS9YwQqwaWvGzWtMGdZyGhprml7F/s9OMzBt9oZFlQmUZ5QuQce0aTQuMc86HxXsJ3cU+1cI428Yyh6Zt4xhh/358vCG2x2J5SeZsiIrcSdsf4cxemuT9IOEikylr3NeAGJXnoM0DIk/FzLp6yBepktTQaCal2Rzjl8MKJeGQ5UD0Eh9Ppjjlg+8JOZ86/2ktc66AXjn5bWSNF+1bVl16fyQQ1rAJDR0V1MZSaDHSh+NbeozdQyS7AEv4l/kaPeWDhP7UC8OJENcSYGZj3fy2NUyViva8d2QRs70X5fP76RbE5JTbFU9BcktOpdHJfZjC0jMsH/DsaYf417P3PDQHSyD/vDQDuVu+K5/J9PmxcZ3WENzbd58KF9WPW5mQ5wjxuHLFf7VKtAB7o25HMklVo7pJoNxbWcgc9qQ7wfUfQZl+kaDrOUTqk7P84AYNy7vHo+LycY0BsQfgiopIbVpdQ8Rof7gOh8skWILQuaqu2NKWHBZKJI5aGTwO8EgmwIH+80HWLrzbdSpcgzkHBGBIrwxQ4DP9fZb6kImEPL7es2FPExMDZlaZcZ0+/c0uWinrif7C1ITFLJz1cmnh+z+Y7U="
         - secure: "uY8pgaByDT8n5jhiH3nxZ0uuq3pCv9xnLedMGvLw0wkdIeTkaenTU18+gxlmzw47YaBkJhrMXXCZ0cLSMYiE88BWskuJe29rvV+eoSCH3+sA/O+chlfbOqsYHDw9PZrY9GeuN7kZ1UU1Mzcr+SJsINQLJDHI5vXYQxcsp+BY+AviVXP6KgB02rr65lbJs44iWcn3P6av8DifIrvk5uoBFx+Bxyg+TrDZyVRhRt57xjtP9zGioAHkV8fFTsdzP+ZH4AusHTEcM9vLWSFJWv2alvEboPvyPuLAyjjKdmp9D4T7j4ZS9lV/Dutn89YdsChN9bfMetNpRLGkoflogl8lDjOsGBU1D5c3ktoOKYPS7Ae3863pFROwzaWx0Nud/IfhU982KbFi4oZuvS/awaRKj5wg1PBYnr9twgb+E8nan9r+BS/WGGho38Z1OfYXLfcLL/u+/BJ1oL/b5pO+mjgdPGMtOFK0rWfyQPRayMo/FKutw217cfYcdnWqDRUB6EUslyozykYmCDUDPEN92Q88O4k34SbDxDr/sgxorm92M7dRIEJRr5/oaD9kjsTLMhzgTp8+SrNQtmb/Rx90bURO1+fFe6XBPIxwiuLaAeJOOn3LCueAoHb+y/BYHFUbPBrCGvFCJFlp9E2hHseDG9vzseD+n/x0Em5AOkZFQTw9qlk="
       if: branch =~ /^travis_aws_code_deploy*/
-      before_script: 
-        - echo "awesome"
+
       script:
         - cd blog
         - bundle install
         - bundle exec rspec
         - ruby scripts/upload_artifact_as_zip.rb
 
-      # before_deploy:
-      #   - ruby scripts/   
-      # deploy:  
-      #   - provider: codedeploy
-      #     access_key_id: $AWS_ACCESS_KEY
-      #     secret_access_key: $AWS_SECRET_ACCESS_KEY
-      #     bucket: "mdn-codedeploy-artifact"
-      #     key: my-test-build/latest/artifact.zip
-      #     bundle_type: zip
-      #     application: mdn-codedeploy
-      #     deployment_group: mdn_deployment_group
-      #     on:
-      #       all_branches: true
+      deploy:  
+        - provider: codedeploy
+          access_key_id: $AWS_ACCESS_KEY
+          secret_access_key: $AWS_SECRET_ACCESS_KEY
+          bucket: "mdn-codedeploy-artifact"
+          key: my-test-build/latest/artifact.zip
+          bundle_type: zip
+          application: mdn-codedeploy
+          deployment_group: mdn_deployment_group
+          on:
+            all_branches: true
 
