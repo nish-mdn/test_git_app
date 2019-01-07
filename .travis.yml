@@ -11,7 +11,7 @@ jobs:
         artifacts:
           paths:
             - $(git ls-files | tr "\n" ":")
-            - zip -r artifact.zip $TRAVIS_BUILD_DIR 
+            - $(zip -r artifact1.zip $TRAVIS_BUILD_DIR)
           target_paths:
             - my-test-build/blog
           debug: true
