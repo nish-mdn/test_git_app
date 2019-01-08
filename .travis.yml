@@ -1,41 +1,42 @@
 #sudo: true
 language: ruby
 rvm: "2.3.1"
+cache: bundler
 conditions: v0
 stages:
   - name: staging
 jobs:
   include:
     - stage: staging
-      addons:
-        artifacts:
-          paths:
-            - $(git ls-files | tr "\n" ":")
-          target_paths:
-            - my-test-build/blog
+      # addons:
+      #   artifacts:
+      #     paths:
+      #       - $(git ls-files | tr "\n" ":")
+      #     target_paths:
+      #       - my-test-build/blog
       env:
         - secure: "eyioLIVV4pyv6S36oNWl5izhmbzHkYYZFStCbBO8opasU9F24eVmKg1LSLpBu/59zrWtMsuu+W3FiaIllnWKQHATbH4axJC2yogF5k7AQeT1GuYtq7EgCm9njAezG0mzwmWYVYJ8bYCr6726auTkwmVB5h0ezzxhRBCkcAC2/g1s2FEgS3cF1NYn3arN502F0CBjC4ToakPqwMx7IwQdEVZVwhBrCr294hVazT5uSNlU4/rp20UsU0ICjSsy1ZAMzAup2B9CdxYZeeNk5+KQf40qIh2lnjQy8huP3nv7JBYjJVYW/AtJryihDc6dTsLnKZmlEvmntLYnE25JMprAWa76rm1VUL5RoWI8z0SeUyieh640B2CJVaVA0xooFxDmo0L4i3n5aKjRTMAjm1Hi9mYqyS5Xgx2+eXJEU/XcNtpsLbO2NTZSkekjfnm6z/zGf8TVz05PWyMwG7z8uQVM1aQ678v13DUM73cXZHO++ePmgV5ToQi3Cu1lXAPds95FCWxuVYBHnwUyNnnrHgtszZUnkOj4n9dtK1bFkEtKX7vRzZjmb3BYLY6pkue82OUKsdawBIK7iTyg/c6bTLwQ6npaSgWmnFwVsFaPjZkG2rR0PNpwox2+VXA515SATYreeK6212Y0vTuZxseNNc8z+y63z4qZUOt65iMe74YcWBg="
         - secure: "hSeE7pd2p7XFojgmrdv1KVXudkDHQK9khkL97gQdn3C7SOWhhSthHoN4bjncHMMFTYmZWvXfPXQWJzU4H1tUHLkODXbfrls1ex2YMKLdfd/m5Y2NMN86ImUZCULWW1LHXmse1yxrqHBhd/4KNKytMy/h9pv6FYtov8HncvZNiE73SLzo7BIgVWpt42fmQfZZtmmFimD5LSN+xvfMzLrqI40UGn5tyLlGSor/R4OrtTCXOnaT/4sqaZHOvjydGajG7RJ1hMdDkIO+sNoaKMqJcs0t46hU5PU7TD+hc7jvd3qHyPv3ZfVRKhMYN7tnAy4fc+nQ9gNp/OoTD4QQ284qw+huj5yfp8dNhlqxoZaQd7DbY8tWX2yDCc+JvIYBKoq4LX8OsKcBqffPheK/RV1iHOLfWA/gKTJ0ekDrJSU+uLjCM608ihqKkG3i07sKi5yWS3kd7OvbARgYEOy7J1wge96gmwHG2NmOM611NVyaCHKOn20pzBbSsfQBBtePueck/qbJqPx7tN86lWEeo8pibEUZcXC1DL75qOdOCEsopNIOGlr8sm8vKfkTC+Q7+6Dacqyf0oo3hVF9IHS+0b5oAdqgC+WOcaIW8tXaBJ5ZpM9KucjypaZXaiR7E9I+7FS1842/3sfLiDmoXs5BKxIlbRAPTcvFHQkB+f3B45oVKEQ="
         - secure: "bByUPkqzM37br6s6MIKV2PtjoepWh4Y89a/I6FmoAVtgGKqYC/d57ENnUdUbPapg4MmvsvSmmtlt2+qq93SdKly4XPGW9fGK/p/84Mo/RUlFUhwJVDM85zexfzDvm05YMcYsLcYKSssW55HImdhK2TKc9pYXEsucVTpbBDsLZyBOeuOUlPk2aIjDrdzkSfIPOH5KgnBAXLYRj/E90SufyNc346qIjFgJQ12muXQtq+JK5/ivu8/fnAnnnqEhp2LP/Wmt8L+6nv0/MgxCapjbeOPUbXQADc6vvYS7XVbEH73c5NyUEcYLhJ1Papb+ka6zK8USDQnGX8vPFsSRnWUqAPsBTWckEhQkP2eQurxuhJJr807C5SMtn2ZL5zpPfuQ4FzNOHRLCbKdmvfiayjhF6/Zu+wKz6IxFBOj90dh/NWK0Kk8oRD6IAHaFmEpirMQWFUCs8n62tgmPcVnB24PWCJps0/NsArDL8TbGeYcXGYPxbCvK0uVym1A1s6WYvTChaeM9fOrT/ZF6KFo6ruPaaPzIl3e+WhJbIEsS+TNAjQ8WMbqs11d0WT/sXghEdDbc4JmQSuf+BlozjYzuWTFf4VQJtXV7gRDMN3kfVFAQz+4SdvvICN3vQdO/VVlWXvp65BpfeYpoCjZFh7EDNnEeilLusJlUkRQ9yVJOJHg6Aak="  
         - secure: "TQ6bJ17dhIrApQzFdU8kJp+LYaQ3Zwn/X+gN4UUIdyy4XVLPgFSZB0CJvbiNA5cU7qnfFqLVj+p6e4Z7FOJjCf4uEDCKeRWrRUlaVc70g4Moq3CMNtnrp2zlPt9UzWMOO8PSu1atyUYz0zl+QtxwvbzlQqSH1IbS2f1wuhi4KkS0mJXL1fWUw0GTqdgCz70CjekEZdWzm8FHP3sjrkK0kOgH4XH0E3Uy1vxn9kqrW+sSWqh4mqW/TPeH6V2D/mKcjZjBvEvAmBCB4qOg81d2bicw/MhogrNNwT9Q41nja+nLsCe4j/KD1zRf5tT1AtVy41QOpC0pxLHIRUQwTtIMh9VDOjf+9nPRsEUOGPph0vDcdPQW9IyOQTkT+WtHb30129bHcFq5HmQE9U/jFJbgFVLC/S61JjQQ/UwYJaVVEshnvrNNqwUwBPo7KDFuaorWQLfZKJJQV3pvhGApn1WhY/GEzfnosfidtdY/gNGqhsgO210lfponYX5PEr4yBal5vkDU2dpBBg9qWzY6Edk3+cDvzbA3T33crCz26XU6eXQ1pGYDINXhmNs6+GuUlekpzz25zzmTUeM3MgdnhV9V25sCUVTRqN/xvZ9/a6ukgEgRtCKsJOi9izDyQeK/uHdT8Ph8pThSCStE1U4gKnQDj2lCPTSNcIPDpfTydfq9R3U="
         - secure: "ukEw47vBDm42O8XL7iXMWN8t/inBFq8KA4hLWcjqlyhEUhuhdJXT2yq2+crG01Ka6wl14dTi6nbo8wjk1eNUhTDBejLjjdj0JhMJHJh1OVZRPrK+F4HzWeauDjiypf1sn6KXSCkXWjCX+uMmfjigBiVI6M7Y9popQW64cthMswSxPQWYMuqgHLu1CV+qyuHNt0uyN8JZxgu3U2SuRdL/ZAYg/PgCzZmVMec6l0McyS3QAoT4QPekB2dbcxKAspQdEMl9VQ49DtW8aGVQS3XZZ64AGU8zEaVZo7n5NFvEErVXp3rU8Sz8m5vab6GTPSrH5VV949engPYp5nIjBooeu9zwY1gArdmgOlIuyc8OSrRN3efpdrgXb4JgWsK8FDnd3DoS79bgWOXPkZ1Naq69WXUI2uwuDgmoJZEiyFeJ1g+mzYLwuHZXkpdG45R61x6wCI/5p6qQeQhsna3wr3VIv6uIcEBBcjhtBDLEtMM4QC5TwDI52uecOJKnuLfDWsi/o+kiu93kF0bFQnhSu02QHR28/VvrSte/M489eU9tQfMIVPUslwmbAVjGv//I4ewnq0PyKV/E+7pnJiJQFIL2nk950I2P2495tYpVQ96nR7OxlXIbXowDMbIQ6G4mVjShzcGuWJh1qgGmMshJEcBBA31LzTCG7ka64SecXVtsKeI="
-      if: branch =~ /^travis_aws_code_deploy*/
+      if: branch =~ /^build_matrix*/
 
       script:
         - cd blog
-        - bundle install
-        - bundle exec rspec
-        - ruby scripts/upload_artifact_as_zip.rb
+      #   - bundle install
+      #   - bundle exec rspec
+      #   - ruby scripts/upload_artifact_as_zip.rb
 
-      deploy:  
-        - provider: codedeploy
-          access_key_id: $AWS_ACCESS_KEY
-          secret_access_key: $AWS_SECRET_ACCESS_KEY
-          bucket: "mdn-codedeploy-artifact"
-          key: my-test-build/latest/artifact.zip
-          bundle_type: zip
-          application: mdn-codedeploy
-          deployment_group: mdn_deployment_group
-          on:
-            all_branches: true
+      # deploy:  
+      #   - provider: codedeploy
+      #     access_key_id: $AWS_ACCESS_KEY
+      #     secret_access_key: $AWS_SECRET_ACCESS_KEY
+      #     bucket: "mdn-codedeploy-artifact"
+      #     key: my-test-build/latest/artifact.zip
+      #     bundle_type: zip
+      #     application: mdn-codedeploy
+      #     deployment_group: mdn_deployment_group
+      #     on:
+      #       all_branches: true
 
