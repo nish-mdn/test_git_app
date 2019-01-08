@@ -26,8 +26,8 @@ jobs:
 
       script:
         - cd blog
-      #   - bundle install
-      #   - bundle exec rspec
+        - bundle install
+        - bundle exec rspec
       #   - ruby scripts/upload_artifact_as_zip.rb
 
       # deploy:  
